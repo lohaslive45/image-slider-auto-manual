@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #23e3c9;
+}
+
+.box{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* 相片串 */
+.slides{
+    width: 500%;    /* 4張相片 = 5倍寬度 */
+    height: 500px;
+    display: flex;
+    
+}
+
+/* 隱藏 圓圈按鈕*/
+.slides input{
+    display: none;
+}
+
+/* 單張 相片*/
+.slide{
+    width: 20%;     /* 單張相片 = 1/5倍寬度 */
+    transition: 2s; /* 動畫時間 */
+}
+
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+/*css 手動切換-底部圓圈按鈕 */
+.nav-manual{    /*圓圈按鈕 位置*/
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{    /*圓圈按鈕 顏色風格*/
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: #40d3dc;
+}
+
+/* css手動切換 相片流 ----無須 js無須 js-----*/
+#btn1:checked ~ .first{
+    margin-left: 0;
+}
+
+#btn2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#btn3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#btn4:checked ~ .first{
+    margin-left: -60%;
+}
+
+#btn5:checked ~ .first{
+    margin-left: -80%;
+}
+
+/* css自動切換 相片流 ----必須 js-----*/
+.nav-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.nav-auto div{
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.nav-auto div:not(:last-child){     /* 覆蓋 在既有 手動 圓圈按鈕上*/
+    margin-right: 40px;
+}
+
+#btn1:checked ~ .nav-auto .auto-btn1{
+    background: #40d3dc;
+}
+
+#btn2:checked ~ .nav-auto .auto-btn2{
+    background: #40d3dc;
+}
+
+#btn3:checked ~ .nav-auto .auto-btn3{
+    background: #40d3dc;
+}
+
+#btn4:checked ~ .nav-auto .auto-btn4{
+    background: #40d3dc;
+}
+
+#btn5:checked ~ .nav-auto .auto-btn5{
+    background: #40d3dc;
+}
